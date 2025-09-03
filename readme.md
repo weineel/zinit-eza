@@ -16,7 +16,7 @@ When what's needed is an atclone'' hook to e.g. install a software (plus atpull'
 # run-atpull：Even if this repository has not been updated, atpull will still be executed during `zinit update weineel/zinit-eza`.
 # atpull"%atclone" :If the same command is used for installation and updating.
 
-# eza: Cargo will build the eza binary and place it in $HOME/.local/share/cargo/bin/eza.
+# eza: Cargo will build the eza binary and place it in $HOME/.cargo/bin/eza or $HOME/.local/share/cargo/bin/eza.
 zinit as"program" pick"eza" \
   atclone"cargo install --locked eza" \
   atpull"cargo install --force eza" \
