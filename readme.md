@@ -1,4 +1,4 @@
-# zinit-zellij
+# zinit-eza
 
 **Note: zinit and zplugin are different names of the same thing**
 
@@ -13,12 +13,16 @@ When what's needed is an atclone'' hook to e.g. install a software (plus atpull'
 ```
 # The invocation uses https://github.com/zdharma-continuum/null repo as a placeholder
 # for the atclone'' and atpull'' hooks
-# run-atpull：Even if this repository has not been updated, atpull will still be executed during `zinit update weineel/zinit-zellij`.
+# run-atpull：Even if this repository has not been updated, atpull will still be executed during `zinit update weineel/zinit-eza`.
 # atpull"%atclone" :If the same command is used for installation and updating.
 
-zinit as"program" pick"zellij" \
-  atclone"cargo install --locked zellij && zellij setup --generate-completion zsh > ./_zellij" \
-  atpull"cargo install --force zellij && zellij setup --generate-completion zsh > ./_zellij" \
+# eza: Cargo will build the eza binary and place it in $HOME/.local/share/cargo/bin/eza.
+zinit as"program" pick"eza" \
+  atclone"cargo install --locked eza" \
+  atpull"cargo install --force eza" \
   run-atpull \
-  for weineel/zinit-zellij
+  for weineel/zinit-eza
+
+zi ice from"gh-r" as"completion" pick"completions/zsh/_eza"
+zi light eza-community/eza
 ```
