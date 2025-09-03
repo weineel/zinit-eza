@@ -23,6 +23,6 @@ zinit as"program" pick"eza" \
   run-atpull \
   for weineel/zinit-eza
 
-zinit ice from"gh-r" as"completion" pick"completions/zsh/_eza"
+zinit ice from"gh" as"completion" pick"completions/zsh/_eza"
 zinit light eza-community/eza
 ```
